@@ -1,0 +1,42 @@
+{
+  "meta": { "invoiceCounter": 1002 },
+  "employees": [
+    { "id": "emp_owner", "name": "נחף", "phone": "0535224616", "role": "בעלים / טכנאי ראשי", "createdAt": "2026-01-01T08:00:00.000Z" },
+    { "id": "emp_2", "name": "אחמד", "phone": "0521112233", "role": "טכנאי", "createdAt": "2026-01-05T08:00:00.000Z" }
+  ],
+  "suppliers": [
+    { "id": "sup_1", "name": "מובייל פארטס בע\"מ", "phone": "0509998877", "notes": "ספק מסכים ראשי, אספקה תוך 24 שעות", "createdAt": "2026-01-02T08:00:00.000Z" },
+    { "id": "sup_2", "name": "טק סלולר יבוא", "phone": "0537776655", "notes": "סוללות ומטענים", "createdAt": "2026-01-02T08:00:00.000Z" },
+    { "id": "sup_3", "name": "אקססוריז דיל", "phone": "0544443322", "notes": "אביזרים וכיסויים", "createdAt": "2026-01-03T08:00:00.000Z" }
+  ],
+  "customers": [
+    { "id": "cus_1", "name": "מוחמד עלי", "phone": "0501234567", "email": "", "address": "נחף", "notes": "לקוח קבוע", "createdAt": "2026-02-10T09:00:00.000Z" },
+    { "id": "cus_2", "name": "סאלי חאמד", "phone": "0529876543", "email": "sally@example.com", "address": "כרמיאל", "notes": "", "createdAt": "2026-03-01T11:00:00.000Z" },
+    { "id": "cus_3", "name": "יוסף נסראללה", "phone": "0526655443", "email": "", "address": "מג'ד אל-כרום", "notes": "מעדיף תשלום במזומן", "createdAt": "2026-04-12T14:30:00.000Z" }
+  ],
+  "inventory": [
+    { "id": "inv_1", "name": "מסך iPhone 12", "category": "מסך", "deviceModel": "iPhone 12", "quantity": 3, "minQuantity": 2, "costPrice": 220, "sellPrice": 450, "supplierId": "sup_1", "location": "מגירה A1", "createdAt": "2026-01-10T08:00:00.000Z" },
+    { "id": "inv_2", "name": "מסך iPhone 13", "category": "מסך", "deviceModel": "iPhone 13", "quantity": 1, "minQuantity": 2, "costPrice": 260, "sellPrice": 520, "supplierId": "sup_1", "location": "מגירה A1", "createdAt": "2026-01-10T08:00:00.000Z" },
+    { "id": "inv_3", "name": "מסך Samsung Galaxy S21", "category": "מסך", "deviceModel": "Galaxy S21", "quantity": 2, "minQuantity": 1, "costPrice": 240, "sellPrice": 480, "supplierId": "sup_1", "location": "מגירה A2", "createdAt": "2026-01-10T08:00:00.000Z" },
+    { "id": "inv_4", "name": "סוללה iPhone 11", "category": "סוללה", "deviceModel": "iPhone 11", "quantity": 5, "minQuantity": 3, "costPrice": 60, "sellPrice": 160, "supplierId": "sup_2", "location": "מגירה B1", "createdAt": "2026-01-10T08:00:00.000Z" },
+    { "id": "inv_5", "name": "סוללה iPhone 12", "category": "סוללה", "deviceModel": "iPhone 12", "quantity": 0, "minQuantity": 3, "costPrice": 70, "sellPrice": 180, "supplierId": "sup_2", "location": "מגירה B1", "createdAt": "2026-01-10T08:00:00.000Z" },
+    { "id": "inv_6", "name": "מצלמה אחורית iPhone 13", "category": "מצלמה", "deviceModel": "iPhone 13", "quantity": 2, "minQuantity": 1, "costPrice": 130, "sellPrice": 300, "supplierId": "sup_1", "location": "מגירה C1", "createdAt": "2026-01-10T08:00:00.000Z" },
+    { "id": "inv_7", "name": "שקע טעינה iPhone 12", "category": "שקע טעינה", "deviceModel": "iPhone 12", "quantity": 4, "minQuantity": 2, "costPrice": 35, "sellPrice": 120, "supplierId": "sup_2", "location": "מגירה C2", "createdAt": "2026-01-10T08:00:00.000Z" },
+    { "id": "inv_8", "name": "כבל מטען USB-C מקורי", "category": "כבל / מטען", "deviceModel": "כללי", "quantity": 12, "minQuantity": 5, "costPrice": 12, "sellPrice": 45, "supplierId": "sup_3", "location": "תצוגה", "createdAt": "2026-01-10T08:00:00.000Z" }
+  ],
+  "products": [
+    { "id": "pro_1", "name": "כיסוי סיליקון iPhone 13", "category": "גב / כיסוי", "costPrice": 8, "price": 39, "quantity": 20, "createdAt": "2026-01-15T08:00:00.000Z" },
+    { "id": "pro_2", "name": "מגן זכוכית 9H", "category": "אחר", "costPrice": 5, "price": 30, "quantity": 35, "createdAt": "2026-01-15T08:00:00.000Z" },
+    { "id": "pro_3", "name": "אוזניות אלחוטיות", "category": "אחר", "costPrice": 40, "price": 99, "quantity": 8, "createdAt": "2026-01-15T08:00:00.000Z" },
+    { "id": "pro_4", "name": "מטען קיר מהיר 20W", "category": "כבל / מטען", "costPrice": 18, "price": 65, "quantity": 14, "createdAt": "2026-01-15T08:00:00.000Z" }
+  ],
+  "repairs": [
+    { "id": "rep_1", "customerId": "cus_1", "device": "iPhone 12", "issue": "מסך שבור אחרי נפילה", "status": "ready", "assignedTo": "emp_owner", "laborCost": 80, "partsUsed": [{ "invId": "inv_1", "name": "מסך iPhone 12", "qty": 1, "cost": 220 }], "partsCost": 220, "totalPrice": 530, "notes": "", "createdAt": "2026-05-15T10:00:00.000Z" },
+    { "id": "rep_2", "customerId": "cus_2", "device": "iPhone 11", "issue": "הסוללה נגמרת מהר", "status": "in_progress", "assignedTo": "emp_2", "laborCost": 60, "partsUsed": [{ "invId": "inv_4", "name": "סוללה iPhone 11", "qty": 1, "cost": 60 }], "partsCost": 60, "totalPrice": 220, "notes": "להתקשר כשמוכן", "createdAt": "2026-05-18T12:30:00.000Z" },
+    { "id": "rep_3", "customerId": "cus_3", "device": "Galaxy S21", "issue": "לא נטען", "status": "received", "assignedTo": "emp_owner", "laborCost": 0, "partsUsed": [], "partsCost": 0, "totalPrice": 0, "notes": "לבדוק שקע טעינה", "createdAt": "2026-05-20T15:00:00.000Z" }
+  ],
+  "invoices": [
+    { "id": "ivc_1", "number": 1001, "customerId": "cus_1", "repairId": "rep_1", "items": [{ "desc": "מסך iPhone 12 + החלפה", "qty": 1, "price": 530 }], "total": 530, "paid": true, "paymentMethod": "מזומן", "date": "2026-05-16T16:00:00.000Z", "createdAt": "2026-05-16T16:00:00.000Z" },
+    { "id": "ivc_2", "number": 1002, "customerId": "cus_2", "repairId": "", "items": [{ "desc": "מגן זכוכית 9H", "qty": 1, "price": 30 }, { "desc": "כיסוי סיליקון", "qty": 1, "price": 39 }], "total": 69, "paid": true, "paymentMethod": "אשראי", "date": "2026-05-19T13:00:00.000Z", "createdAt": "2026-05-19T13:00:00.000Z" }
+  ]
+}

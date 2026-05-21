@@ -1,0 +1,12 @@
+{
+  "name": "tikshoret-nahef",
+  "version": "1.0.0",
+  "description": "מערכת ניהול חנות סלולר - תקשורת נחף",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
