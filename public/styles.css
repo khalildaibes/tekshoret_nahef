@@ -92,6 +92,18 @@ body {
 }
 .btn-ghost:hover { background: rgba(255,255,255,.16); }
 
+/* כפתור תפריט נייד */
+.nav-toggle {
+  display: none; width: 42px; height: 42px; border-radius: 11px;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16);
+  color: #fff; cursor: pointer; place-items: center; flex-shrink: 0;
+}
+.nav-toggle:active { background: rgba(255,255,255,.2); }
+.nav-toggle .ico { width: 22px; height: 22px; }
+
+/* רקע כהה מאחורי המגירה */
+.drawer-backdrop { display: none; }
+
 /* ===== פריסה ===== */
 .layout { display: flex; min-height: calc(100vh - 70px); }
 
@@ -430,9 +442,99 @@ table.tbl tbody tr:last-child td { border-bottom: none; }
 .checkline { display: flex; align-items: center; gap: 8px; }
 .checkline input { width: auto; }
 
-@media (max-width: 760px) {
-  .sidebar { display: none; }
-  .main { padding: 18px 14px; }
-  .form-grid, .kv-grid { grid-template-columns: 1fr; }
+/* ===== טאבלט ===== */
+@media (max-width: 1050px) {
+  .main { padding: 22px 18px; }
+}
+
+/* ===== נייד — חוויית מובייל מלאה ===== */
+@media (max-width: 860px) {
+  body { font-size: 14.5px; }
+
+  /* סרגל עליון מצומצם */
+  .topbar { height: 60px; gap: 10px; padding: 0 12px; }
+  .nav-toggle { display: grid; }
+  .brand { min-width: 0; gap: 9px; }
+  .brand-mark { width: 38px; height: 38px; font-size: 16px; }
+  .brand-text strong { font-size: 16px; }
+  .brand-text span { display: none; }
   .global-search { display: none; }
+  .topbar-actions { gap: 6px; }
+  .phone-chip { padding: 8px 10px; font-size: 12.5px; }
+  .btn-ghost { padding: 8px 10px; font-size: 12.5px; }
+
+  /* תפריט צד => מגירה נשלפת */
+  .layout { display: block; min-height: calc(100vh - 60px); }
+  .sidebar {
+    position: fixed; top: 0; right: 0; height: 100vh; z-index: 70;
+    width: 280px; max-width: 84vw;
+    transform: translateX(102%);
+    transition: transform .28s cubic-bezier(.2,.85,.25,1);
+    box-shadow: -22px 0 55px rgba(12,20,36,.30);
+    overflow-y: auto; padding-top: 16px;
+  }
+  .sidebar.open { transform: translateX(0); }
+  .nav-item { padding: 13px 13px; font-size: 15px; }
+
+  .drawer-backdrop {
+    display: block; position: fixed; inset: 0; z-index: 65;
+    background: rgba(12,20,36,.55); backdrop-filter: blur(2px);
+    opacity: 0; pointer-events: none; transition: opacity .24s;
+  }
+  .drawer-backdrop.show { opacity: 1; pointer-events: auto; }
+
+  /* תוכן */
+  .main { padding: 16px 13px; }
+  .page-head { gap: 12px; margin-bottom: 18px; }
+  .page-head h1 { font-size: 21px; }
+  .page-head .sub { font-size: 12.5px; }
+  .page-head > .btn { width: 100%; justify-content: center; padding: 13px; }
+
+  /* כרטיסי סטטיסטיקה — שתי עמודות צפופות */
+  .stat-grid { grid-template-columns: 1fr 1fr; gap: 11px; margin-bottom: 18px; }
+  .stat-card { padding: 14px; }
+  .stat-val { font-size: 22px; margin-top: 8px; }
+  .stat-label { font-size: 12px; }
+  .stat-ico { width: 34px; height: 34px; font-size: 17px; }
+
+  /* פריסות עמודה אחת */
+  .grid-2, .form-grid, .kv-grid { grid-template-columns: 1fr; }
+
+  /* טבלאות — גלילה אופקית חלקה עם רמז */
+  .tbl-wrap { -webkit-overflow-scrolling: touch; }
+  table.tbl th { padding: 10px 12px; font-size: 11px; }
+  table.tbl td { padding: 11px 12px; font-size: 13.5px; }
+  .icon-btn { width: 36px; height: 36px; }
+
+  /* סרגל כלים פנימי */
+  .toolbar { padding: 12px 13px; gap: 8px; }
+  .search-mini { min-width: 100%; height: 44px; }
+  .filter-sel { width: 100%; height: 44px; }
+
+  /* חלון מודאלי — כמעט מסך מלא */
+  .modal-overlay { padding: 0; align-items: flex-end; }
+  .modal, .modal.wide {
+    max-width: 100%; width: 100%; max-height: 94vh;
+    border-radius: 20px 20px 0 0;
+    animation: sheet .26s cubic-bezier(.2,.9,.3,1);
+  }
+  @keyframes sheet { from { transform: translateY(100%); } }
+  .modal-body { padding: 18px 16px; }
+  .form-actions { flex-direction: column-reverse; }
+  .form-actions .btn { width: 100%; justify-content: center; padding: 13px; }
+
+  /* חיפוש חכם */
+  .search-hero { padding: 20px 16px; }
+  .search-hero h1 { font-size: 20px; }
+  .search-hero .sh-box input { font-size: 15px; }
+
+  /* toast רחב מלמטה */
+  .toast { inset-inline: 12px; bottom: 14px; text-align: center; }
+}
+
+/* ===== מסך קטן מאוד ===== */
+@media (max-width: 380px) {
+  .stat-grid { grid-template-columns: 1fr; }
+  .brand-text strong { font-size: 15px; }
+  .phone-chip { padding: 8px; }
 }

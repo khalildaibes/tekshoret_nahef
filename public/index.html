@@ -13,6 +13,9 @@
 <body>
   <!-- סרגל עליון -->
   <header class="topbar">
+    <button class="nav-toggle" id="navToggle" aria-label="פתיחת תפריט">
+      <svg viewBox="0 0 24 24" class="ico"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
     <div class="brand">
       <div class="brand-mark">תn</div>
       <div class="brand-text">
@@ -36,6 +39,8 @@
       <input type="file" id="importFile" accept="application/json,.json" hidden />
     </div>
   </header>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
 
   <div class="layout">
     <!-- תפריט צד -->

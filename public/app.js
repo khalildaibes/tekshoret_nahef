@@ -141,8 +141,21 @@ function renderNav() {
       <span class="nav-ico">${n.ico}</span><span>${n.label}</span>${badge}</button>`;
   }).join('');
   $('#nav').querySelectorAll('.nav-item').forEach(b =>
-    b.onclick = () => { state.view = b.dataset.view; render(); });
+    b.onclick = () => { state.view = b.dataset.view; toggleDrawer(false); render(); });
 }
+
+/* ---------- תפריט נייד (מגירה נשלפת) ---------- */
+function toggleDrawer(open) {
+  const sb = document.querySelector('.sidebar');
+  const bd = $('#drawerBackdrop');
+  if (!sb || !bd) return;
+  const show = open === undefined ? !sb.classList.contains('open') : open;
+  sb.classList.toggle('open', show);
+  bd.classList.toggle('show', show);
+  document.body.style.overflow = show ? 'hidden' : '';
+}
+$('#navToggle').onclick = () => toggleDrawer();
+$('#drawerBackdrop').onclick = () => toggleDrawer(false);
 
 function render() {
   renderNav();
@@ -734,7 +747,7 @@ function openModal(title, bodyHTML, wide = false) {
 function closeModal() { $('#modal').hidden = true; }
 $('#modalClose').onclick = closeModal;
 $('#modal').onclick = e => { if (e.target.id === 'modal') closeModal(); };
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); toggleDrawer(false); } });
 
 /* ===========================================================
    הגדרות שדות הטפסים
